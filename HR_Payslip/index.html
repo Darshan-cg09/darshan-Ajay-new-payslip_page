@@ -1323,7 +1323,7 @@
                     const formData = collectFormData();
                     console.log('Sending formData:', JSON.stringify(formData, null, 2));
                     try {
-                        const response = await fetch('http://44.223.23.145:3993/api/payslips', {
+                        const response = await fetch('http://13.60.26.108:3993/api/payslips', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(formData)
@@ -1658,7 +1658,7 @@
 
             async function loadPayslips() {
                 try {
-                    const response = await fetch('http://44.223.23.145:3993/api/payslips/all');
+                    const response = await fetch('http://13.60.26.108:3993/api/payslips/all');
                     if (!response.ok) {
                         throw new Error('Failed to fetch payslips');
                     }
@@ -1703,7 +1703,7 @@
 
             async function deletePayslip(id) {
                 try {
-                    const response = await fetch(`http://44.223.23.145:3993/api/payslips/${id}`, {
+                    const response = await fetch(`http://13.60.26.108:3993/api/payslips/${id}`, {
                         method: 'DELETE'
                     });
                     if (!response.ok) {
@@ -1720,7 +1720,7 @@
             async function viewPayslip(id) {
                 console.log('Viewing payslip with ID:', id);
                 try {
-                    const response = await fetch(`http://44.223.23.145:3993/api/payslips/${id}`);
+                    const response = await fetch(`http://13.60.26.108:3993/api/payslips/${id}`);
                     if (!response.ok) {
                         const errorData = await response.json();
                         console.error('API error response:', errorData);
